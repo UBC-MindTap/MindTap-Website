@@ -6,8 +6,8 @@
   --highlight: #cceae5;
 
   /* Brand Colors */
-  --accent: #0f766e;
-  --accent-hover: #0c5e57;
+  --accent: #0f6876;
+  --accent-hover: #138693;
   --accent-soft: #cceae5;
   --accent-light: #e6f4f1;
 
@@ -15,8 +15,8 @@
   --border: #dee2e6;
 
   /* Background Boxes */
-  --box-light: #e1fcf7;
-  --box-medium: #d1f7ef;
+  --box-light: #d7f3f5;
+  --box-medium: #bfecee;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -79,7 +79,7 @@ body {
 
 /* Header */
 .site-header {
-  background: #e6fffa;
+  background: #e6fdff;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -209,7 +209,7 @@ body {
 
 /* Footer */
 .footer {
-  background: #e6fffa;
+  background: #e6fdff;
   text-align: center;
   font-size: 0.9rem;
   padding: var(--spacing-md);
@@ -253,7 +253,7 @@ body {
 #contact-form textarea:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.25);
+  box-shadow: 0 0 0 3px rgba(18, 135, 142, 0.25);
 }
 
 /* Button */
