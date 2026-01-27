@@ -16,7 +16,7 @@
 
   /* Background Boxes */
   --box-light: #e6fffa;
-  --box-medium: #cceae5;
+  --box-medium: #e6fffa;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -79,7 +79,7 @@ body {
 
 /* Header */
 .site-header {
-  background: #dcf8f9;
+  background: #e6fffa;
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -209,7 +209,7 @@ body {
 
 /* Footer */
 .footer {
-  background: #dcf8f9;
+  background: #e6fffa;
   text-align: center;
   font-size: 0.9rem;
   padding: var(--spacing-md);
