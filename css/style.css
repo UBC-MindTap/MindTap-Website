@@ -1,21 +1,23 @@
 :root {
   /* Base Colors */
-  --bg: #ffffff;
+  --bg: #f0f7f6;
   --text: #1a1a1a;
-  --muted: #e6f4f1;
-  --highlight: #cceae5;
+  --muted: #d4e8e6;
+  --highlight: #b8d4d1;
+  --header-footer: #f5f9f8;
 
   /* Brand Colors */
   --accent: #0f6876;
   --accent-hover: #138693;
-  --accent-soft: #cceae5;
-  --accent-light: #e6f4f1;
+  --accent-soft: #d4e8e6;
+  --accent-light: #f0f7f6;
 
   /* UI Colors */
   --border: #dee2e6;
 
   /* Background Boxes */
-  --box-light: #d7f3f5;
+  --box-light: #d4e8e6;
+  --box-medium: #b8d4d1;
 
   /* Typography */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
@@ -51,7 +53,7 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
   color: var(--text);
-  background-color: #eefffc;
+  background-color: var(--bg);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -78,7 +80,7 @@ body {
 
 /* Header */
 .site-header {
-  background: #f2fffd;
+  background: var(--header-footer);
   border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
@@ -165,7 +167,7 @@ body {
 .hero-image {
   width: 100%;
   height: 400px;
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-light) 100%);
+  background: var(--box-light);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -236,7 +238,7 @@ body:has(.project-details-section) .hero {
 
 /* Alternating background shades */
 .section:nth-child(odd) { background-color: var(--box-light); }
-.section:nth-child(even) { background-color: var(--box-medium); }
+.section:nth-child(even) { background-color: var(--box-light); }
 
 /* Titles & subtitles */
 .section-title {
@@ -302,7 +304,7 @@ body:has(.project-details-section) .hero {
 
 /* Who We Are Section */
 .who-we-are-section {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-light) 100%);
+  background: var(--box-light);
 }
 
 .who-we-are-content {
@@ -375,7 +377,7 @@ body:has(.project-details-section) .hero {
 /* Project Details Section */
 /* Project Details Section */
 .project-details-section {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-light) 100%);
+  background: var(--box-light);
 }
 
 .project-features-grid {
@@ -421,7 +423,7 @@ body:has(.project-details-section) .hero {
 }
 
 .impact-text-block {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-light) 100%);
+  background: var(--box-light);
   padding: var(--spacing-xl);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
@@ -436,7 +438,7 @@ body:has(.project-details-section) .hero {
 
 /* Footer */
 .footer {
-  background: #f2fffd;
+  background: var(--header-footer);
   text-align: center;
   font-size: 0.9rem;
   padding: var(--spacing-md);
@@ -508,7 +510,7 @@ body:has(.project-details-section) .hero {
 /* Contact Image Section */
 .contact-image-section {
   width: 100%;
-  margin-bottom: var(--spacing-xl);
+  margin: 2rem auto 6rem;
   padding: 0 var(--spacing-lg);
 }
 
@@ -527,9 +529,9 @@ body:has(.project-details-section) .hero {
   object-fit: cover;
 }
 
-/* Contact section with gradient background */
+/* Contact section with solid background */
 .section-muted {
-  background: linear-gradient(135deg, var(--accent-soft) 0%, var(--accent-light) 100%);
+  background: var(--box-light);
 }
 
 /* Contact section layout */
