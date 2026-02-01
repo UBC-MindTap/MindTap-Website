@@ -59,6 +59,43 @@ body {
   min-height: 100vh;
 }
 
+/* Text-to-Speech Button */
+.speech-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.speech-button:hover {
+  background: var(--accent-hover);
+  transform: scale(1.1);
+}
+
+.speech-button.speaking {
+  background: #ff6b6b;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 /* Skip link */
 .skip-link {
   position: absolute;
