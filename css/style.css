@@ -212,6 +212,13 @@ body {
   box-shadow: var(--shadow);
 }
 
+.hero-image img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+}
+
 .hero-buttons {
   display: flex;
   gap: var(--spacing-md);
