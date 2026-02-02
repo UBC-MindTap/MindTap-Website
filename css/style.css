@@ -68,16 +68,19 @@ body {
   color: white;
   border: none;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
+  width: 80px;
+  height: 80px;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
   box-shadow: var(--shadow);
   z-index: 1000;
   transition: var(--transition);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2px;
 }
 
 .speech-button:hover {
@@ -88,6 +91,18 @@ body {
 .speech-button.speaking {
   background: #ff6b6b;
   animation: pulse 1.5s infinite;
+}
+
+.speech-button .icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.speech-button .label {
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 @keyframes pulse {
@@ -582,6 +597,7 @@ body:has(.project-details-section) .hero {
 .contact-wrapper {
   max-width: 800px;
   margin: 0 auto;
+  padding-left: var(--spacing-lg);
 }
 
 .contact-intro {

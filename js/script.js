@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let isSpeaking = false;
   let speechUtterance = null;
   let autoStartEnabled = true; // Flag to prevent multiple auto-starts
-  let voicesLoaded = false;
+  let speechEnabledByDefault = true; // New flag for default speech state
 
   // Load voices and ensure they're available
   function loadVoices() {
@@ -54,23 +54,27 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (speechBtn && 'speechSynthesis' in window) {
+    // Set initial button state to "Mute" (speech is on by default)
+    speechBtn.innerHTML = '<span class="icon">🔇</span><span class="label">Mute</span>';
+    speechBtn.setAttribute("aria-label", "Stop reading");
+
     speechBtn.addEventListener("click", () => {
       if (isSpeaking) {
-        // Stop speaking
+        // Stop speaking (mute)
         window.speechSynthesis.cancel();
         isSpeaking = false;
         speechBtn.classList.remove("speaking");
-        speechBtn.innerHTML = "🔊";
+        speechBtn.innerHTML = '<span class="icon">🔊</span><span class="label">Unmute</span>';
         speechBtn.setAttribute("aria-label", "Read page content aloud");
       } else {
-        // Start speaking
+        // Start speaking (unmute)
         const textToRead = getPageText();
         speakText(textToRead);
       }
     });
 
     // Auto-start speech on page load
-    if (autoStartEnabled) {
+    if (autoStartEnabled && speechEnabledByDefault) {
       // Small delay to ensure page is fully loaded
       setTimeout(async () => {
         const textToRead = getPageText();
@@ -176,14 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
     speechUtterance.onstart = () => {
       isSpeaking = true;
       speechBtn.classList.add("speaking");
-      speechBtn.innerHTML = "🔇";
+      speechBtn.innerHTML = '<span class="icon">🔇</span><span class="label">Mute</span>';
       speechBtn.setAttribute("aria-label", "Stop reading");
     };
     
     speechUtterance.onend = () => {
       isSpeaking = false;
       speechBtn.classList.remove("speaking");
-      speechBtn.innerHTML = "🔊";
+      speechBtn.innerHTML = '<span class="icon">🔊</span><span class="label">Unmute</span>';
       speechBtn.setAttribute("aria-label", "Read page content aloud");
     };
     
@@ -191,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Speech synthesis error:", event);
       isSpeaking = false;
       speechBtn.classList.remove("speaking");
-      speechBtn.innerHTML = "🔊";
+      speechBtn.innerHTML = '<span class="icon">🔊</span><span class="label">Unmute</span>';
       speechBtn.setAttribute("aria-label", "Read page content aloud");
     };
     
